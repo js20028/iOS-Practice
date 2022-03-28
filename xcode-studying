@@ -18,3 +18,10 @@ let flatMapTest2 = array2.flatMap { $0 }.compactMap{ $0 }
 
 * content hugging - 텍스트의 이미지에따라 크기가 결정되는 컨텐츠(버튼, 라벨 등)의 고유크기가 있는데 더 늘어나는것에 대해 저항하는 제약, 우선순위가 낮은것이 늘어남
 * content compression resistance - 줄어드는것에 대해 저항하는 제약(압축에대한 저항), 우선순위가 높은것이 크기가 줄어들지않음
+
+* 랜덤함수
+arc4random() -> UInt32 // 0~2^32-1의 범위의 난수 반환
+arc4random_uniform(UInt32) -> UInt32 // 파라미터로 넣은 UInt32-1 사이의 난수 리턴
+drand48() -> Double // 0부터 1.0 사이의 난수 리턴
+ex)
+arc4random_uniform(5) // 0~4 사이의 난수 랜덤생성, 배열의 인덱스요소에 접근하려면 Int(arc4random_uniform(5))로 사용
