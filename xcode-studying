@@ -33,3 +33,12 @@ Int.rand(in: 0..5) // 0~5사이의 Int난수 생성
 * print 함수 - 매개변수로 separator, terminator 생략되어있음
 separator : 디폴트는 “ “ 프린트 , 사이에 원하는 문자로 구문가능
 terminator : 디폴트는 “\n”
+
+
+* tuple - 여러 값을 하나의 개체에 일시적으로 묶는방법, 함수에서 여러 값들을 한번에 반환 가능
+ex)
+빈 튜플은 Void, typealias Void = ()
+let myTuple = (10, 12.1, “Hi”) 
+튜플의 요소에 접근하려면 myTuple.0  // 10
+let (myInt, myFloat, myString) = myTuple // myInt = 10, myFloat = 12.1, myString = “Hi”
+let myTuple = (count: 10, length: 12.1, message: “Hi”) // 각 요소에 이름설정가능, 접근할때 myTuple.count 로 가능
