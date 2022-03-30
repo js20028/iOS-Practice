@@ -42,3 +42,10 @@ let myTuple = (10, 12.1, “Hi”)
 튜플의 요소에 접근하려면 myTuple.0  // 10
 let (myInt, myFloat, myString) = myTuple // myInt = 10, myFloat = 12.1, myString = “Hi”
 let myTuple = (count: 10, length: 12.1, message: “Hi”) // 각 요소에 이름설정가능, 접근할때 myTuple.count 로 가능
+
+* if문에서 ,는 and와 같음 여러 옵셔널변수를 언래핑할수있음
+
+* !로 선언하면 optional로 사용되지 않을때 자동으로 언래핑함
+
+* AnyObject는 클래스타입의 인스턴스 저장가능
+  Any는 클래스 포함 어느 자료형도 저장가능
