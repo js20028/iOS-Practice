@@ -49,3 +49,48 @@ let myTuple = (count: 10, length: 12.1, message: “Hi”) // 각 요소에 이�
 
 * AnyObject는 클래스타입의 인스턴스 저장가능
   Any는 클래스 포함 어느 자료형도 저장가능
+
+* truncatingRemainder(dividingBy: 나눌 수) 
+나머지 값을 구하는 일반적인 방법은 % 이지만, 이는 Int끼리의 계산에만 적용이 가능
+
+---------------------------------------------------------------------------------------------------------------------
+* 다른화면으로 데이터 전달하기(segue로 push)
+<segue로 push> - 화면이 오른쪽에서 왼쪽으로 생김
+버튼에서 Show 선택
+
+다른화면으로 데이터 전달
+전달할 페이지에 nameLabel아울렛변수 만들기
+var name: String? 프로퍼티 정의
+prepare메서드를 뷰컨트롤러에 오버라이드, 이렇게하면 세그웨이를 실행하기 직전에 프리페어 메소드가 자동으로 호출됨
+prepare메서드 안에 segue.destination 작성, destination은 전환하려는 뷰컨트롤러의 인스턴스를 가져올수 있음
+if let viewController = segue.destination as? SeguePushViewController 로 다운캐스팅 
+전달받는 페이지에서 데이터 출력
+backbutton은 self.navigationController?.popViewController로 함
+
+<Segue로 Present> - 화면이 밑에서 위로 덮힘
+버튼에서 present modally 선택
+백버튼은 self.presentingViewController?.dismiss로 함
+
+
+* 이전화면으로 데이터 전달(delegate 패턴)
+let viewController = self.storyboard?.instantiateViewController 로 스토리보드의 뷰컨트롤러를
+인스턴스화 시켜야함, 옵셔널로 반환되므로 가드문 사용
+self.navigationController?.pushViewController로 화면 푸시
+
+<코드로 present>
+let viewController = self.storyboard?.instantiateViewController 로 스토리보드의 뷰컨트롤러를
+인스턴스화 시켜야함, 옵셔널로 반환되므로 가드문 사용
+self.present(viewController, animated: true, completion: nil) 로 화면 프레젠트
+풀스크린은 viewController.modalPresentationStyle = .fullScreen 추가
+
+이전화면으로 데이터 전달
+delegate 패턴 사용
+root view 컨트롤러에 라벨 추가(nameLabel)
+데이터를 넘겨줄 페이지에 프로토콜 정의, AnyObject 상속 sendData(name: String) 함수 정의
+weak var delegate: SendDataDelegate? 델리게이트 변수앞에는 weak를 붙여야함
+페이지를 dismiss하기 전에 self.delegate?.sendData(name: "abc") 코드 작성
+-> 데이터를 전달받은 뷰컨트롤러에서 델리게이트 프로토콜을 채택하고 델리게이트를 위임받으면
+    이전화면 뷰컨트롤러에서 정의된 sendData함수가 실행됨
+이전화면에서 프레젠트하기 전에 viewController.delegate = self로 초기화하면 델리게이트를 위임받음
+이전화면에서 프로토콜을 채택하고 프로토콜을 준수하기위해 정의했던 함수를 작성함 
+---------------------------------------------------------------------------------------------------------------------
