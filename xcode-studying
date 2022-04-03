@@ -94,3 +94,15 @@ weak var delegate: SendDataDelegate? 델리게이트 변수앞에는 weak를 붙
 이전화면에서 프레젠트하기 전에 viewController.delegate = self로 초기화하면 델리게이트를 위임받음
 이전화면에서 프로토콜을 채택하고 프로토콜을 준수하기위해 정의했던 함수를 작성함 
 ---------------------------------------------------------------------------------------------------------------------
+
+* ??(Nil-coalescing)
+언래핑하고자 하는 옵셔널 값을 ?? nil 병합 연산자 좌측에 놓고, 옵셔널에 값이 없을 때 우측에 대신할 값을 적으면 됨
+ex)
+if let name = name {
+     print("hello, \(name)")
+} else {
+     print("hello, what's your name?")
+}
+
+=> print("hello, " + (name ?? "what's your name?"))
+name의 값이 있는경우에는 name의 옵셔널을 언래핑해서 출력하고 nil이면 ?? 우측의 값으로 대체함
