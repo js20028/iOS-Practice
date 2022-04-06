@@ -114,3 +114,10 @@ name의 값이 있는경우에는 name의 옵셔널을 언래핑해서 출력하
 	실패할경우 nil을 리턴하므로 옵셔널타입으로 선언해야함
 
 * if let 과 다르게 guard let은 선언한 변수를 guard문 밖에서도 쓸수있음
+
+* switch-case 문 + where은 and와 같음
+ex)
+case 0...49 where num % 2 == 0:
+     print("Cold and even")
+일치하는 case문을 만나면 자동으로 빠져나옴, case문 다음에 break는 생략
+빠져나가지 않고 아래로 계속 내려가게하려면 fallthrough 추가하기
