@@ -134,3 +134,41 @@ func add(first x: Int, second y: Int) -> Int {		// 외부 내부: 자료형, 외
 }
 add(first:10, second:20)	// 함수를 호출할 때는 외부 매개변수명 사용, add(x:10, y:10)은 오류
 함수를 정의할때 외부 매개변수명을 생략하면 내부매개변수명이 외부매개변수명까지 겸함
+
+
+func add(_ x: Int, with y: Int) -> Int {
+	return(x+y)
+}
+첫번째 외부 매개변수만 생략하는 경우가 많음, 두번째 매개변수부터는 외부 매개변수사용, 제일 많이쓰는 방법
+
+
+* #function - 함수명
+함수 내부에 print(#function)을 넣으면 함수명이 출력됨
+add(_:with:) :의 수가 매개변수의 수
+
+* 함수를 정의할때 name: String = "aaa" 처럼 디폴트 매개변수를 정할수있음
+
+* 함수의 리턴형으로 튜플을 사용하여 여러개의 결과를 반환할 수 있음
+  결과는 변수에 저장해서 변수.a 변수.b 변수.c 로 각각의 요소만 사용할수도 있음
+
+* String(format: "%.3f", result.div) - result.div를 소수점 3자리까지 표시
+
+* 가변매개변수
+  ...을 사용하여 여러개의 매개변수를 받을수있음
+  ex)
+  func aaa(strings: String...)	  // 선언
+  aaa(strings: "1", "2", "3")	  // 호출
+
+
+* inout 매개변수 : call by reference 구현
+- 함수가 값을 반환한 후에도 매개변수에 일어난 변화를 유지하려면 함수의 선언부에서 매개변수를 입출력 매개변수로 선언해야함
+ex)
+var myValue = 10
+func doubleValue(value: inout Int) -> Int {	// call by reference 하고싶은 매개변수 앞에 inout 씀
+	value += value
+	return(value)
+}
+print(myValue)	// 10
+print(doubleValue(value: &myValue))	// 20, call by reference 하고싶은 변수에 & 붙여서(주소) 호출
+print(myValue)	// 20
+
