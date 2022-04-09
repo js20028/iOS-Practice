@@ -192,8 +192,17 @@ class 키워드로 만든 클래스 메서드는 자식클래스에서 오버라
 
 * designated initializer - 모든 프로퍼티를 다 초기화시키는 생성자
 
-* computed property(연산 프로퍼티)는 setter가 없으면 get{}은 생략할 수 있고 변경하지 않더라도 var로 선언해야 함
+* computed property(연산 프로퍼티)는 setter가 없으면 get{ }은 생략할 수 있고 변경하지 않더라도 var로 선언해야 함
 var manAge: Int {
    return age-1
 }
+setter가 있으면 get{ }은 생략할수 없음, setter의 매개변수명은 newValue가 기본, 이 경우 (newValue) 생략 가능
+set {
+   age = newValue + 1
+}
+
+* failable initializer(실패 가능한 생성자: init?)
+ex)
+let myImage: UIImage = UIImage(named: "apple.png")! 
+apple.png 파일이 없으면 nil, 생성자는 init?(named: String) 옵셔널형이므로 사용하려면 언래핑해야 하므로 위의 예제에서 마지막에 !가 붙음
 
