@@ -206,3 +206,11 @@ ex)
 let myImage: UIImage = UIImage(named: "apple.png")! 
 apple.png 파일이 없으면 nil, 생성자는 init?(named: String) 옵셔널형이므로 사용하려면 언래핑해야 하므로 위의 예제에서 마지막에 !가 붙음
 
+
+* swift에서 하위클래스는 단 하나의 부모클래스만 상속받을 수 있음, 나머지는 프로토콜 채택, 상속은 클래스만 가능
+
+* convenience initializer - 다른 이니셜라이저를 이용해서 초기화 self.init(), 코드 중복을 방지함
+convenience init(매개변수) {
+     // 초기화 위임, self.init()		// self.init이 먼저 와야함
+     // 자신의 초기화 코드
+}
