@@ -214,3 +214,11 @@ convenience init(매개변수) {
      // 초기화 위임, self.init()		// self.init이 먼저 와야함
      // 자신의 초기화 코드
 }
+
+
+* initializer가 상속되는 경우
+1. designated initializer와 convenience initializer 가 모두 상속
+- 자식 클래스에 designated initializer가 없는 경우
+- 자식 클래스에 초기화가 필요한 프로퍼티가 없을 경우
+2. convenience initializer만 상속하는 경우
+- 자식클래스에서 부모클래스의 designated initializer를 오버라이드 하는 경우
