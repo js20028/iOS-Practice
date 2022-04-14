@@ -222,3 +222,5 @@ convenience init(매개변수) {
 - 자식 클래스에 초기화가 필요한 프로퍼티가 없을 경우
 2. convenience initializer만 상속하는 경우
 - 자식클래스에서 부모클래스의 designated initializer를 오버라이드 하는 경우
+
+* swift 열거형 멤버에는 메서드도 가능함
