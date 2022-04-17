@@ -281,3 +281,24 @@ class가 더 갖는 특징
 * 옵셔널 체이닝
 옵셔널 타입으로 정의된 값이 프로퍼티나 메서드를 가지고 있을 때, 다중 if를 쓰지 않고 간결하게 코드를 작성하기 위해 사용
 ex)  cell.textLabel?.text - 성공하면 옵셔널값, 실패하면 nil 
+
+
+* 기능은 같고 매개변수형만 다른 함수는 제네릭함수로 구현
+func myPrint<T>(a: T, b: T) {	// 어느자료형을 넣어도 동작함
+	print(b, a)
+}
+
+* 제네릭 구조체
+struct Stack<T> {
+    var items = [T]()
+    mutating func push(_ item: T) {	// 구조체는 value타입이라 메서드안에서 프로퍼티의 값을 변경할 수 없지만 mutating 키워드를 쓰면 변경 가능
+        items.append(item)
+    }
+    mutating func pop() -> T {
+        return items.removeLast()
+    }
+}
+
+var stackOfInt = Stack<Int>()	// 제네릭 구조체를 사용할 때 어떤자료형을 사용할지 선택해서 사용
+
+* swift의 Array도 generic 구조체임
