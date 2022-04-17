@@ -301,4 +301,20 @@ struct Stack<T> {
 
 var stackOfInt = Stack<Int>()	// 제네릭 구조체를 사용할 때 어떤자료형을 사용할지 선택해서 사용
 
-* swift의 Array도 generic 구조체임
+* swift의 Array도 generic 구조체임, 구조체이므로 값 타입
+
+* swift의 배열은 먼저 append로 방을 만든 후 값을 변경해야함
+
+
+var x = [0,0,0,0,0]
+var x = Array(repeating: 0, count: 5)
+var x = [Int](repeating: 0, count: 5)
+
+var num = [1,2,3]
+num.append(contentsOf: [4,5,6])	// [1,2,3,4,5,6]
+num.insert(9, at: 4)	// [1,2,3,4,9,5,6]
+num = num + num		//[1,2,3,4,9,5,6,1,2,3,4,9,5,6]
+num += [8,9]			//[1,2,3,4,9,5,6,1,2,3,4,9,5,6,8,9]
+
+
+
