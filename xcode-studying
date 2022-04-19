@@ -334,3 +334,13 @@ struct Num {
 var n = Num()
 print(n, n.num)			// Num(num: [1,2,3]) [1,2,3]
 print(n[0], n[1], n[2])		// 1 2 3
+
+* Dictionary 에서 키값으로 접근하면 value는 옵셔널로 나옴
+number[2] = "둘", number.updateValue("둘", forKey: 2)		// value 수정
+number[2] = nil, number.removeValue(forKey: 1)			// value 삭제	
+
+for (cKor, cEng) in. colors {			// Tuple로 키와 값에 각각 접근
+	print(cKor, cEng)
+}					
+
+var kColor = [String](color.keys)		// keys를 String Array로 변경
