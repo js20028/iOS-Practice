@@ -359,3 +359,25 @@ for (cKor, cEng) in. colors {			// Tuple로 키와 값에 각각 접근
 }					
 
 var kColor = [String](color.keys)		// keys를 String Array로 변경
+
+
+* 테이블뷰 에서 cellFroRowAt 함수를 정의할 때 
+먼저 cell을 정의함
+let cell = UITableViewCell(style: .default, reuseIdentifier: "myCell") 또는
+let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) 등으로 정의
+
+기존의 
+cell.textLabel?.text = "\(indexPath.row)"
+cell.detailTextLabel?.text = “” 
+
+방법이
+
+var content = cell.defaultContentConfiguration()
+
+content.text = "\(indexPath.row)"
+content.secondaryText = “”
+content.image = UIImage(systemName: “star”)
+
+cell.contentConfiguration = content 
+로 사용법이 바뀜
+
