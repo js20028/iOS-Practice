@@ -1,3 +1,18 @@
+* 인터뷰 질문
+- Scene-Based Life-Cycle
+- AppDelegate.swift 파일
+- viewController 와 view
+- class와 struct의 차이
+- HIG(Huanm Interface Guidelines) https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/
+
+
+* 아웃렛변수를 쓸때는 weak가 좋음
+
+* 코드로 라벨등을 만들때는 마지막에 view.addSubveiw(a) 를 써야 뷰에 나타남
+
+* UI/UX 사이트 pinterest.co.kr
+
+
 * compactMap - 배열에서 nil 제거, 옵셔널바인딩해줌, 1차원 배열일때만 가능
 flatMap - 2차원배열을 1차원 배열로 flatten하게 만들어줌, 1차원배열일때는 compactMap과 동일한 결과를 냄
 ex) 
