@@ -5,6 +5,9 @@
 - class와 struct의 차이
 - HIG(Huanm Interface Guidelines) https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/
 
+아이콘이미지 사이트 - www.flaticon.com
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 * 아웃렛변수를 쓸때는 weak가 좋음
 
@@ -365,6 +368,7 @@ var kColor = [String](color.keys)		// keys를 String Array로 변경
 먼저 cell을 정의함
 let cell = UITableViewCell(style: .default, reuseIdentifier: "myCell") 또는
 let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) 등으로 정의
+(일반적으로는 dequeueReusableCell 사용)
 
 기존의 
 cell.textLabel?.text = "\(indexPath.row)"
