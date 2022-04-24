@@ -399,3 +399,10 @@ content.image = UIImage(systemName: “star”)
 cell.contentConfiguration = content 
 로 사용법이 바뀜
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+<<<<< 네트워킹 >>>>>
+
+1. URL 만들기
+2. URLSession 만들기
+3. URLSession 인스턴스에게 task 주기
+4. task 시작하기( task.resume() )
