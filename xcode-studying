@@ -406,3 +406,13 @@ cell.contentConfiguration = content
 2. URLSession 만들기
 3. URLSession 인스턴스에게 task 주기
 4. task 시작하기( task.resume() )
+
+* App Transport Security(ATS)
+- ios 9부터 외부 네트워크와 관련된 보안 규칙인 신설
+- 네트워크 객체를 사용해서 SSL 보안 프로토콜을 사용하지 않는 네트워크에 접속하려면 info.plist 파일에 설정을 추가해주어야 함
+- SSL 보안 프로토콜이 적용된 네트워크는 접속시 https:// 를 사용 ( 적용안된 네트워크는 http:// )
+- 서버 도메인이 https:// 로 시작하면 ATS 보안을 적용하지 않아도 됨
+- http:// 로 시작하면 반드시 ATS 보안을 적용하여야 함
+
+ATS를 위해 info.plist 수정 - App Transport Security Settings를 추가하고 하위항목에 Allow Arbitrary Loads를 추가한 뒤 Value를 Yes로 변경 
+(좋은 방법은 아님, 애플에서는 https사용 권장)
