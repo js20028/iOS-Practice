@@ -15,11 +15,14 @@ json 파일 보는 사이트 - codebeautify.org/jsonviewer
 카카오개발자서비스 - developers.kakao.com
 유튜브 API - https://developers.google.com/youtube/v3/getting-started?hl=ko
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-<<<<< Xcode 팁 >>>>>
+<<<<< Xcode 팁 & 오류 >>>>>
 
 * Xcode 자동완성 안될 때
 [Preferences] - [Locations] 에서 Derived Data 아래 회색 화살표 누르고 Finder에서 [Derived Data] 폴더 삭제 후 
 파일 - 세이브, Xcode 껐다가 재시작 
+
+* Thread 1: ... setValue:forUndefinedKey:]: this class is not key value coding-compliant
+- 커넥션 인스펙터에서 연결된 것들 체크하기
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
