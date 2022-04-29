@@ -21,6 +21,9 @@ json 파일 보는 사이트 - codebeautify.org/jsonviewer
 [Preferences] - [Locations] 에서 Derived Data 아래 회색 화살표 누르고 Finder에서 [Derived Data] 폴더 삭제 후 
 파일 - 세이브, Xcode 껐다가 재시작 
 
+* 코드 정렬하기
+Editor - Structure - Re-Indent
+
 * Thread 1: ... setValue:forUndefinedKey:]: this class is not key value coding-compliant
 - 커넥션 인스펙터에서 연결된 것들 체크하기
 
