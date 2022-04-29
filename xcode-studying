@@ -402,13 +402,28 @@ content.image = UIImage(systemName: “star”)
 cell.contentConfiguration = content 
 로 사용법이 바뀜
 
+* closure 내부에서 클래스의 프로퍼티에 접근하려면 반드시 앞에 self. 을 붙여야함 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 <<<<< 네트워킹 >>>>>
 
 1. URL 만들기
+let url = URL(string: "")
+옵셔널이므로 바인딩해야함
+
 2. URLSession 만들기
+let session = URLSession(configuration: .default) 
+
 3. URLSession 인스턴스에게 task 주기
+func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+@ es
+
+let task = session.dataTask(with: url) { data, response, error in
+
+}
+
 4. task 시작하기( task.resume() )
+3번 코드 다음줄에 task.resume() 작성
+
 
 * App Transport Security(ATS)
 - ios 9부터 외부 네트워크와 관련된 보안 규칙인 신설
@@ -419,3 +434,11 @@ cell.contentConfiguration = content
 
 ATS를 위해 info.plist 수정 - App Transport Security Settings를 추가하고 하위항목에 Allow Arbitrary Loads를 추가한 뒤 Value를 Yes로 변경 
 (좋은 방법은 아님, 애플에서는 https사용 권장)
+
+* JSON 파싱 
+JSON에서 필요한 데이터를 구조체로 만들어서 사용
+
+* static metatype - .self
+String이 type이고 "Hello"가 인스턴스의 value
+String.Type은 type이고 String.self가 metatype의 value
+.self는 static metatype이고 compile time의 object type
