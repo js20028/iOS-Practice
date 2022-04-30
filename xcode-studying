@@ -406,6 +406,12 @@ cell.contentConfiguration = content
 로 사용법이 바뀜
 
 * 테이블뷰의 데이터가 계속 바뀐다면 tableView.reloadData()를 써야함
+UI관련 소스( reloadData() )는 메인 스레드에서 작성해야함 - 네트워크 통신은 백그라운드 스레드에서 처리되기때문에 아래 코드를 사용하여 메인에서 비동기 처리하도록 함
+DispatchQueue.main.async {
+      self.tableView.reloadData()
+}
+
+DispatchQueue - 앱의 기본 스레드 또는 백그라운드 스레드에서 작업실행을 순차또는 동시처리로 관리하는 개체
 
 * closure 내부에서 클래스의 프로퍼티에 접근하려면 반드시 앞에 self. 을 붙여야함 
 
