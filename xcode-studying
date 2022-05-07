@@ -431,6 +431,12 @@ let yesterdayDate = formatter.string(from: yesterday!)
 버튼 아웃렛 만들고 button.clipsToBounds = true
 button.layer.cornerRadius = 0.5 * button.bounds.size.height
 
+* 스위치(UISwitch)
+액션함수 만들고 if sender.isOn { ON상태에 실행할 코드 } else { OFF상태에 실행할 코드 } 코드 작성
+
+* 세그먼트 컨트롤(UISegmentedControl)
+액션함수 만들고 if sender.selectedSegmentIndex == 0 { 첫번째 항목 } else { 두번째 항목 } 
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 <<<<< 네트워킹 >>>>>
 
