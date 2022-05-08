@@ -437,6 +437,15 @@ button.layer.cornerRadius = 0.5 * button.bounds.size.height
 * 세그먼트 컨트롤(UISegmentedControl)
 액션함수 만들고 if sender.selectedSegmentIndex == 0 { 첫번째 항목 } else { 두번째 항목 } 
 
+* 동영상 재생 코드
+let file: String? = Bundle.main.path(forResource: "파일이름", ofType: "mp4")
+let url = NSURL(fileURLWithPath: file!)
+let playerController = AVPlayerViewController()
+let player = AVPlayer(url: url as URL)
+playerController.player = player
+self.present(playerController, animated: true)
+player.play()
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 <<<<< 네트워킹 >>>>>
 
