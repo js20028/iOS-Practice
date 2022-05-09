@@ -99,6 +99,9 @@ let myTuple = (count: 10, length: 12.1, message: “Hi”) // 각 요소에 이�
 * 다른화면으로 데이터 전달하기(segue로 push)
 <segue로 push> - 화면이 오른쪽에서 왼쪽으로 생김
 버튼에서 Show 선택
+뒤로가려면 self.navigationController?.popViewController
+루트뷰컨트롤러로 바로 가려면 self.navigationController?.popToRootViewController
+
 
 다른화면으로 데이터 전달
 전달할 페이지에 nameLabel아울렛변수 만들기
