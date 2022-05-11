@@ -433,6 +433,22 @@ let yesterdayDate = formatter.string(from: yesterday!)
 또는
 버튼 아웃렛 만들고 button.clipsToBounds = true
 button.layer.cornerRadius = 0.5 * button.bounds.size.height
+또는 커스텀 버튼(여러버튼에 적용할때, 스토리보드에서도 바꿀수있게)
+버튼 클래스를 만들고 isRound 변수만들고 앞에는 @IBInspectable을 붙임
+클래스 위에는 @IBDesignable을 써서 스토리보드에서 적용된모습을 실시간으로 확인할 수 있도록 함
+변수는 연산프로퍼티를 적용
+@IBDesignable		// 스토리보드에서 적용된 모습을 실시간으로 확인할 수 있음
+class RoundButton: UIButton {
+    @IBInspectable var isRound: Bool = false {		// 스토리보드에서도 변경할 수 있도록 함
+        didSet {
+            if isRound {
+                self.layer.cornerRadius = self.frame.height / 2
+            }
+        }
+    }
+}
+
+
 
 * 스위치(UISwitch)
 액션함수 만들고 if sender.isOn { ON상태에 실행할 코드 } else { OFF상태에 실행할 코드 } 코드 작성
