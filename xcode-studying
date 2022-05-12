@@ -468,6 +468,14 @@ player.play()
 * 데이터의 사이즈에 맞게 라벨 크기 맞추기
 self.라벨아웃렛이름.sizeToFit()	
 
+* alert
+let alert = UIAlertController(title: "할 일 등록", message: nil, preferredStyle: .alert)	// UIAlertController()로 알럿을 만들고
+let registerButton = UIAlertAction(title: "등록", style: .default, handler: {})		// UIAlertAction()으로 버튼 만들기
+let cancelButton = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+alert.addAction(registerButton)								// addAction()으로 버튼 넣기
+alert.addAction(cancelButton)
+self.present(alert, animated: true, completion: nil)		// present()로 알럿 띄우기
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 <<<<< 네트워킹 >>>>>
 
