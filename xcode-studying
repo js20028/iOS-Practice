@@ -476,6 +476,13 @@ alert.addAction(registerButton)								// addAction()으로 버튼 넣기
 alert.addAction(cancelButton)
 self.present(alert, animated: true, completion: nil)		// present()로 알럿 띄우기
 
+* reloadRows(at:with:) 
+특정 행의 업데이트를 애니메이션 효과를 사용해서 표출 할 때 사용
+
+* setEditing()
+테이블뷰 편집모드 사용
+
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 <<<<< 네트워킹 >>>>>
 
