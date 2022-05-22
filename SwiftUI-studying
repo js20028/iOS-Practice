@@ -1,1 +1,8 @@
 
+* Binding - 값 
+@Binding
+var isActivated: Bool
+    
+init(isActivated: Binding<Bool> = .constant(true)) {
+    _isActivated = isActivated
+}
