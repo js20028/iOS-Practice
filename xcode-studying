@@ -522,3 +522,34 @@ JSON에서 필요한 데이터를 구조체로 만들어서 사용
 String이 type이고 "Hello"가 인스턴스의 value
 String.Type은 type이고 String.self가 metatype의 value
 .self는 static metatype이고 compile time의 object type
+
+-----------------------------------------------------------------------------------------------------------------------------------
+< Storyboard 없이 코드 + xib >
+view.swift 파일과 같은이름으로 .xib파일을 만든 뒤에 File's Owner에서 커스텀클래스와 File's Owner클래스를 연결
+view.swift 파일에 init 메서드 작성
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        // self.customInit() 또는 self.alternativeCustomInit() 으로 호출
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        // self.customInit() 또는 self.alternativeCustomInit() 으로 호출
+    }
+
+    //방법 1. loadNibNamed
+    func customInit() {
+        if let view = Bundle.main.loadNibNamed("MyCustomView", owner: self, options: nil)?.first as? UIView {
+            view.frame = self.bounds
+            addSubview(view)
+        }
+    }
+    
+    //방법 2. UINib 생성 후 instantiate
+    func alternativeCustomInit() {
+        if let view = UINib(nibName: "MyCustomView", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView {
+            view.frame = self.bounds
+            addSubview(view)
+        }
+    }
