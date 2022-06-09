@@ -525,7 +525,7 @@ String.Type은 type이고 String.self가 metatype의 value
 
 -----------------------------------------------------------------------------------------------------------------------------------
 < Storyboard 없이 코드 + xib >
-view.swift 파일과 같은이름으로 .xib파일을 만든 뒤에 File's Owner에서 커스텀클래스와 File's Owner클래스를 연결
+view.swift 파일과 같은이름으로 .xib파일을 만든 뒤에 File's Owner에서 커스텀클래스와 File's Owner클래스를 연결(밑에 view까지 연결시키면 에러남)
 view.swift 파일에 init 메서드 작성
 
     required init?(coder aDecoder: NSCoder) {
@@ -553,3 +553,8 @@ view.swift 파일에 init 메서드 작성
             addSubview(view)
         }
     }
+
+이후 ViewController에서 
+    let myCustomView = MyCustomView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height))
+    view.addSubview(myCustomView)
+   
