@@ -525,6 +525,12 @@ String.Type은 type이고 String.self가 metatype의 value
 
 -----------------------------------------------------------------------------------------------------------------------------------
 < Storyboard 없이 코드 + xib >
+* 세팅하기
+storyboard 파일 삭제
+Info.plist 에서 Storyboard Name 항목 삭제
+프로젝트 general에서 Main Interface 항목 Main 텍스트 지우기
+SceneDelegate.swift 파일 수정
+
 view.swift 파일과 같은이름으로 .xib파일을 만든 뒤에 File's Owner에서 커스텀클래스와 File's Owner클래스를 연결(밑에 view까지 연결시키면 에러남)
 view.swift 파일에 init 메서드 작성
 
@@ -558,3 +564,5 @@ view.swift 파일에 init 메서드 작성
     let myCustomView = MyCustomView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height))
     view.addSubview(myCustomView)
    
+
+
