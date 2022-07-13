@@ -433,7 +433,7 @@ let formatter = DateFormatter()
 formatter.dateFormat = "yyyyMMdd"		// DateFormatter()로 날짜를 원하는 형식으로 바꿈(20220000)
 let yesterdayDate = formatter.string(from: yesterday!)
 
-* 버튼 둥글게 만들기
+* 버튼 둥글게 만들기 1
 버튼 누르고 오른쪽 4번째 메뉴에서 User Defined Runtime Attributes 에 layer.cornerRadius를 추가하고 타입을 넘버로 바꾼뒤에 값 설정 (7정도)
 또는
 버튼 아웃렛 만들고 button.clipsToBounds = true
@@ -452,6 +452,15 @@ class RoundButton: UIButton {
         }
     }
 }
+
+* 버튼 둥글게 만들기 2
+버튼 아웃렛 변수 만들고 forEach로 설정 적용
+[emailLoginButton, googleLoginButton, appleLoginButton].forEach {
+            $0?.layer.borderWidth = 1
+            $0?.layer.borderColor = UIColor.white.cgColor
+            $0?.layer.cornerRadius = 30
+ }
+
 
 
 
