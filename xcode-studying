@@ -582,4 +582,5 @@ view.swift 파일에 init 메서드 작성
     view.addSubview(myCustomView)
    
 
-
+* KingFisher
+URL 이미지를 편리하게 표시할수있는 오픈소스 
