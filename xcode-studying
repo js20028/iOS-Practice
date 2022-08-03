@@ -430,6 +430,13 @@ DispatchQueue - 앱의 기본 스레드 또는 백그라운드 스레드에서 �
 
 * closure 내부에서 클래스의 프로퍼티에 접근하려면 반드시 앞에 self. 을 붙여야함 
 
+* capture와 escaping
+- 둘다 클로저에서 사용되는 개념
+capture : 클로저 내부에서 밖에 있는 scope의 instance를 참조하는 것
+escaping : 클로저 외부에서 해당 클로저 자체를 참조하고 있는 것
+
+
+
 * 어제 날짜 문자열로 얻기
 let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())	// 어제날짜가 Date? 타입으로 리턴
 let formatter = DateFormatter()
