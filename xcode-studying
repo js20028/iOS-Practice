@@ -444,6 +444,15 @@ DispatchQueue - 앱의 기본 스레드 또는 백그라운드 스레드에서 �
 capture : 클로저 내부에서 밖에 있는 scope의 instance를 참조하는 것
 escaping : 클로저 외부에서 해당 클로저 자체를 참조하고 있는 것
 
+* escaping closure
+  class ViewModel {
+      var completionhandler: (() -> Void)? = nil
+    
+      func fetchData(completion: @escaping () -> Void) {
+          completionhandler = completion
+      }
+  }
+- completion은 함수의 실행이 종료되기 전에 실행되지 않기 때문에 escaping 클로저, 다시말해 함수 밖(escaping)에서 실행되는 클로저  
 
 
 * 어제 날짜 문자열로 얻기
