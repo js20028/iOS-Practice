@@ -527,6 +527,11 @@ self.present(alert, animated: true, completion: nil)		// present()로 알럿 띄
 * deinit
 클래스 인스턴스가 메모리에서 해제될때 즉시 호출되는 함수
 
+* xib로 만들 테이블 뷰 셀 띄우기
+- TableVeiwController 파일에 
+ let nibName = UINib(nibName: "셀 이름", bundle: nil)
+ tableView.register(nibName, forCellReuseIdentifier: "셀 이름")
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 <<<<< 네트워킹 >>>>>
