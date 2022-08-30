@@ -62,6 +62,13 @@ let flatMapTest2 = array2.flatMap { $0 }.compactMap{ $0 }
 // flatMapTest2 : [1, 2, 3, 5, 6]
 
 * UserDefaults - set 메서드로 데이터 저장, object 메서드로 데이터 로드, object 메서드는 Any 타입으로 리턴됨
+		 PropertyListEncoder(), PropertyListDecoder() 로 값을 저장하고 가져올수도 있음
+		 
+DrinkWater ex)
+  guard let data = UserDefaults.standard.value(forKey: "alerts") as? Data,
+        var alerts = try? PropertyListDecoder().decode([Alert].self, from: data) else { return }
+  UserDefaults.standard.set(try? PropertyListEncoder().encode(alerts), forKey: "alerts")
+  
 
 * didSet - 프로퍼티의 값이 변경된 직후에 호출
 * willSet - 프로퍼티의 값이 변경되기 직전에 호출
