@@ -581,6 +581,9 @@ String이 type이고 "Hello"가 인스턴스의 value
 String.Type은 type이고 String.self가 metatype의 value
 .self는 static metatype이고 compile time의 object type
 
+* remote notification
+- APNs 설정 필요
+
 -----------------------------------------------------------------------------------------------------------------------------------
 < Storyboard 없이 코드 + xib >
 * 세팅하기
