@@ -584,6 +584,9 @@ String.Type은 type이고 String.self가 metatype의 value
 * remote notification
 - APNs 설정 필요 (Apple 개발자 등록 해야함)
 
+* Swift Package Manager
+- Xcode에서 cocoapod을 사용하지 않고 snapkit, alamofire 등 패키지 추가 가능
+
 -----------------------------------------------------------------------------------------------------------------------------------
 < Storyboard 없이 코드 + xib >
 * 세팅하기
