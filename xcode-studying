@@ -587,6 +587,10 @@ String.Type은 type이고 String.self가 metatype의 value
 * Swift Package Manager
 - Xcode에서 cocoapod을 사용하지 않고 snapkit, alamofire 등 패키지 추가 가능
 
+* UICollectionViewCell 에서 contentView.clipToBounds
+- ubview들이 view의 bounds에 가둬질 수 있는 지를 판단하는 Boolean 값
+- true로 설정하면 subview가 view의 경계를 넘어갈 시 잘리며 false로 설정하면 경계를 넘어가도 잘리지 않음
+
 -----------------------------------------------------------------------------------------------------------------------------------
 < Storyboard 없이 코드 + xib >
 * 세팅하기
