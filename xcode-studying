@@ -539,6 +539,27 @@ self.present(alert, animated: true, completion: nil)		// present()로 알럿 띄
 - TableVeiwController 파일에 
  let nibName = UINib(nibName: "셀 이름", bundle: nil)
  tableView.register(nibName, forCellReuseIdentifier: "셀 이름")
+ 
+* static metatype - .self
+String이 type이고 "Hello"가 인스턴스의 value
+String.Type은 type이고 String.self가 metatype의 value
+.self는 static metatype이고 compile time의 object type
+
+* remote notification
+- APNs 설정 필요 (Apple 개발자 등록 해야함)
+
+* Swift Package Manager
+- Xcode에서 cocoapod을 사용하지 않고 snapkit, alamofire 등 패키지 추가 가능 
+  Snapkit 설치 시 Snapkit 하나만 설치하기(안그러면 command ld failed with a nonzero exit code 에러 뜸)
+
+* UICollectionViewCell 에서 contentView.clipToBounds
+- ubview들이 view의 bounds에 가둬질 수 있는 지를 판단하는 Boolean 값
+- true로 설정하면 subview가 view의 경계를 넘어갈 시 잘리며 false로 설정하면 경계를 넘어가도 잘리지 않음
+
+* UIImageView()의 contentMode 속성 3가지	ex) imageView.contentMode = .scaleAspectFit
+- .scaleAspectFit : 비율을 유지하면서 뷰의 사이즈에 맞게 이미지를 늘리는 옵션, 이미지가 뷰를 꽉채우지 못해서 남는 부분은 투명처리 됨
+- .scaleAspectFill : 비율을 유지하면서 뷰의 사이즈에 맞게 이미지를 꽉 채우는 옵션, 이미지의 어떤 부분은 잘려 보일수도 있음
+- .scaleToFill : 전체 이미지가 다 나올 수 있도록 필요하다면 비율을 깨트리면서 뷰의 사이즈에 맞게 이미지를 꽉 채우는 옵션
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -576,26 +597,9 @@ ATS를 위해 info.plist 수정 - App Transport Security Settings를 추가하�
 * JSON 파싱 
 JSON에서 필요한 데이터를 구조체로 만들어서 사용
 
-* static metatype - .self
-String이 type이고 "Hello"가 인스턴스의 value
-String.Type은 type이고 String.self가 metatype의 value
-.self는 static metatype이고 compile time의 object type
-
-* remote notification
-- APNs 설정 필요 (Apple 개발자 등록 해야함)
-
-* Swift Package Manager
-- Xcode에서 cocoapod을 사용하지 않고 snapkit, alamofire 등 패키지 추가 가능 
-  Snapkit 설치 시 Snapkit 하나만 설치하기(안그러면 command ld failed with a nonzero exit code 에러 뜸)
-
-* UICollectionViewCell 에서 contentView.clipToBounds
-- ubview들이 view의 bounds에 가둬질 수 있는 지를 판단하는 Boolean 값
-- true로 설정하면 subview가 view의 경계를 넘어갈 시 잘리며 false로 설정하면 경계를 넘어가도 잘리지 않음
-
-* UIImageView()의 contentMode 속성 3가지	ex) imageView.contentMode = .scaleAspectFit
-- .scaleAspectFit : 비율을 유지하면서 뷰의 사이즈에 맞게 이미지를 늘리는 옵션, 이미지가 뷰를 꽉채우지 못해서 남는 부분은 투명처리 됨
-- .scaleAspectFill : 비율을 유지하면서 뷰의 사이즈에 맞게 이미지를 꽉 채우는 옵션, 이미지의 어떤 부분은 잘려 보일수도 있음
-- .scaleToFill : 전체 이미지가 다 나올 수 있도록 필요하다면 비율을 깨트리면서 뷰의 사이즈에 맞게 이미지를 꽉 채우는 옵션
+* Request Get 방식과 Post방식의 차이
+- Get 방식은 URL에 파라미터값이 표시됨, Post는 전달해야하는 파라미터를 URL안에 넣지 않고 body에 넣기때문에 노출되지않음(id,password 에 많이 사용)
+- URL에는 보낼수있는 데이터의 양에 한계가있지만 body에 넣는 값은 훨씬더 많이 가능
 
 -----------------------------------------------------------------------------------------------------------------------------------
 < Storyboard 없이 코드 + xib >
