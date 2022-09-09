@@ -550,7 +550,7 @@ String.Type은 type이고 String.self가 metatype의 value
 
 * Swift Package Manager
 - Xcode에서 cocoapod을 사용하지 않고 snapkit, alamofire 등 패키지 추가 가능 
-  Snapkit 설치 시 Snapkit 하나만 설치하기(안그러면 command ld failed with a nonzero exit code 에러 뜸)
+  Snapkit 설치 시 Snapkit-Dynamic 빼고 Snapkit 하나만 설치하기(안그러면 command ld failed with a nonzero exit code 에러 뜸)
 
 * UICollectionViewCell 에서 contentView.clipToBounds
 - ubview들이 view의 bounds에 가둬질 수 있는 지를 판단하는 Boolean 값
