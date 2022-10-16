@@ -561,6 +561,10 @@ String.Type은 type이고 String.self가 metatype의 value
 - .scaleAspectFill : 비율을 유지하면서 뷰의 사이즈에 맞게 이미지를 꽉 채우는 옵션, 이미지의 어떤 부분은 잘려 보일수도 있음
 - .scaleToFill : 전체 이미지가 다 나올 수 있도록 필요하다면 비율을 깨트리면서 뷰의 사이즈에 맞게 이미지를 꽉 채우는 옵션
 
+* 빈 화면 누를 시 터치키보드 내리기
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      self.view.endEditing(true)
+  }
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 <<<<< 네트워킹 >>>>>
