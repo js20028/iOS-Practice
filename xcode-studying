@@ -34,6 +34,9 @@ Editor - Structure - Re-Indent
 * Thread 1: ... setValue:forUndefinedKey:]: this class is not key value coding-compliant
 - 커넥션 인스펙터에서 연결된 것들 체크하기
 
+* unrecognized selector sent to instance..
+- 커넥션 인스펙터에서 중복연결 확인
+
 * 단축키
 - newfile : command + n
 - assistant : control + option + command + return
