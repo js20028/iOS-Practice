@@ -449,6 +449,21 @@ DispatchQueue.main.async {
 
 DispatchQueue - 앱의 기본 스레드 또는 백그라운드 스레드에서 작업실행을 순차또는 동시처리로 관리하는 개체
 
+
+< closure >
+* 클로저의 자료형은 원래 함수 선언에서 ( 부터 반환자료형 까지
+  func someFunction(name: String, age: Int) -> String { } 	let someClosure: (_ name: String, _ age: Int) -> String
+
+* () -> Void 와 () -> ()는 같음
+
+* 클로저 호출시 매개변수 이름 없이 바로 데이터를 넣어야함 someClosure("가나다")
+
+* 클로저의 매개변수를 쓰지 않으려면 _ in 사용 
+  let sommeClosure: (_ name: String) -> Void = { _ in 
+  	print("name: ")
+  }
+  _ name은 의미부여를 위함, 클로저에서는 원래 쓰지 않음 let someClosure: (String, Int) -> Void
+  
 * closure 내부에서 클래스의 프로퍼티에 접근하려면 반드시 앞에 self. 을 붙여야함 
 
 * capture와 escaping
@@ -465,6 +480,8 @@ escaping : 클로저 외부에서 해당 클로저 자체를 참조하고 있는
       }
   }
 - completion은 함수의 실행이 종료되기 전에 실행되지 않기 때문에 escaping 클로저, 다시말해 함수 밖(escaping)에서 실행되는 클로저  
+
+
 
 
 * 어제 날짜 문자열로 얻기
