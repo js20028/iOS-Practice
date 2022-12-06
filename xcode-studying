@@ -481,6 +481,22 @@ escaping : 클로저 외부에서 해당 클로저 자체를 참조하고 있는
   }
 - completion은 함수의 실행이 종료되기 전에 실행되지 않기 때문에 escaping 클로저, 다시말해 함수 밖(escaping)에서 실행되는 클로저  
 
+* inline closure
+- 매개변수로 받는 클로저의 자료형과 함수의 자료형이 같다면 매개변수에 함수를 넣을 수 있다.
+
+* @autoclosure
+- 매개변수로 클로저를 받을때 클로저는 매개변수를 가지지 않을때 사용 () -> Void, () -> String 
+- 블럭 생략 가능
+  func someFunction(completion: @autoclosure () -> Void) {
+  	print(#function)
+	completion()
+  }
+  // 원래 호출
+  someFunction(completion: { print("가나다") })
+  
+  // 오토클로저 호출
+  someFunction(completion: print("가나다"))   // 블럭 생략 가능
+
 
 
 
