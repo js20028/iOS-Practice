@@ -602,6 +602,9 @@ String.Type은 type이고 String.self가 metatype의 value
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       self.view.endEditing(true)
   }
+  
+* 텍스트필드 자동 포커싱
+  textField.becomeFirstResponder()
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 <<<<< 네트워킹 >>>>>
