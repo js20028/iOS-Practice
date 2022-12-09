@@ -42,6 +42,7 @@ Editor - Structure - Re-Indent
 - assistant : control + option + command + return
 - 줄바꿈 : option + return
 - 변수명 일괄변경 : command + controll + e
+- 코드 문서화 : option + command + /
 
 * 라벨 폰트사이즈 적절하게 알아서 설정하기
 라벨 선택 후 Autoshrink - Minimum Font Size
