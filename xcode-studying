@@ -705,3 +705,18 @@ let realm = try! Realm() 로 객체 생성
 let aaa = realm.objects(객체타입.self) 로 저장된 데이터 불러오기 가능 (aaa 는 배열)
 let filter1 = aaa.filter("age <= 20") 로 불러온 데이터 필터 가능 (filter1 은 배열)
 try! realm.write { } 블럭 안에서 쓰기, 수정, 삭제 가능
+
+--------------------------------------------------------------------------------------------------------------------------------------
+* navigation Bar UI 변경
+  let navigationBarAppearance = UINavigationBarAppearance()
+  navigationBarAppearance.configureWithDefaultBackground()
+
+  UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+  UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+  UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+  
+  self.navigationController?.navigationBar.tintColor =  // 원하는 색상 - 네비게이션 바 버튼 아이템 색상 의미
+  self.navigationController?.navigationBar.backgroundColor =  // 원하는 색상 - 네비게이션 바에 적용되는 색상을 의미
+  self.navigationController?.navigationBar.barTintColor =  // 원하는 색상 - 네비게이션바의 백그라운드에 적용되는 색을 의미
+ 
+ * standard의 background color는 스크롤을 하고 있는 도중의 색상을 의미, scroll edge의 background color는 스크롤을 하기 전 색상을 의미
