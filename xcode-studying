@@ -729,4 +729,32 @@ try! realm.write { } 블럭 안에서 쓰기, 수정, 삭제 가능
  
 * Relay는 complete, error가 나도 스트림이 종료되지 않기때문에 UI용으로 사용
 * Observable 이 에러가 안나도록 만들어진 것이 Driver, Driver 도 UI용으로 사용, Relay와 Driver 모두 UI용이므로 RxCocoa에 포함됨 
+
+* Observable.create() 사용 예시 - Rx로 이미지 불러오는 함수
+func rxImageLoader(_ src: URL) -> Observable<UIImage?> {
+        return Observable.create { emitter in
+            let task = URLSession.shared.dataTask(with: src) { data, response, error in
+                if error != nil {
+                    emitter.onError(error!)
+                    return
+                }
+                guard let data = data else {
+                    emitter.onCompleted()
+                    return
+                }
+    
+                let image = UIImage(data: data)
+                emitter.onNext(image)
+            }
+            task.resume()
+            
+            return Disposables.create {
+                task.cancel()
+            }
+        }
+}
+
+
+
+
  
