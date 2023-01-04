@@ -721,4 +721,12 @@ try! realm.write { } 블럭 안에서 쓰기, 수정, 삭제 가능
   self.navigationController?.navigationBar.backgroundColor =  // 원하는 색상 - 네비게이션 바에 적용되는 색상을 의미
   self.navigationController?.navigationBar.barTintColor =  // 원하는 색상 - 네비게이션바의 백그라운드에 적용되는 색을 의미
  
- * standard의 background color는 스크롤을 하고 있는 도중의 색상을 의미, scroll edge의 background color는 스크롤을 하기 전 색상을 의미
+* standard의 background color는 스크롤을 하고 있는 도중의 색상을 의미, scroll edge의 background color는 스크롤을 하기 전 색상을 의미
+ 
+ -------------------------------------------------------------------------------------------------------------------------------------
+ 
+ < Rxswift >
+ 
+* Relay는 complete, error가 나도 스트림이 종료되지 않기때문에 UI용으로 사용
+* Observable 이 에러가 안나도록 만들어진 것이 Driver, Driver 도 UI용으로 사용, Relay와 Driver 모두 UI용이므로 RxCocoa에 포함됨 
+ 
