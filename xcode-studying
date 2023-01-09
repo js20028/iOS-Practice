@@ -737,6 +737,24 @@ try! realm.write { } 블럭 안에서 쓰기, 수정, 삭제 가능
 - Observable.from()
 등등
 
+* Observable.create() 기본 사용법
+_ = Observable<String>.create({ observer in
+    observer.onNext("Hello World")
+    observer.onCompleted()
+    return Disposables.create()
+})
+.subscribe({ event in
+    switch event {
+    case let .next(text):
+	print(text)
+    case .completed:
+	break
+    case let .error(error):
+	print(error)
+	break
+    }
+})
+
 
 * Observable.create() 사용 예시 - Rx로 이미지 불러오는 함수
 func rxImageLoader(_ src: URL) -> Observable<UIImage?> {
